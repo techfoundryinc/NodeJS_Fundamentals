@@ -1,2 +1,2 @@
-# NodeJS_Fundamentals
+# NodeJS
 Fundamentals
