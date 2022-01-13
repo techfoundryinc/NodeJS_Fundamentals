@@ -16,3 +16,10 @@ const logger2 = require('./logger.js');
 //logger2.log('second object of logger');
 
 log('Function exported only')
+
+
+const path = require('path');
+
+var pathObj = path.parse(__filename);
+
+console.log(pathObj);
