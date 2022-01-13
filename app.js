@@ -23,3 +23,25 @@ const path = require('path');
 var pathObj = path.parse(__filename);
 
 console.log(pathObj);
+
+const os = require('os');
+
+var  totalMemory =  os.totalmem();
+var freeMemory = os.freemem();
+
+console.log ('Total Memory: ' + totalMemory);
+console.log ('Free Memory: ' + freeMemory);
+
+//Template String 
+//ES6 / ES2015 : ECMAScript 6 defines what features arqe available in JS
+
+// $ for adding dynamically
+console.log (`Total Memory printed Dynamically: ${totalMemory}`);
+console.log (`Free Memory printed Dynamically: ${freeMemory}`);
+
+
+
+
+
+
+
