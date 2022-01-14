@@ -6,23 +6,23 @@ sayHello('Ali Tariq');
 """
 */
 
-var log = require('./logger.js');
+//var log = require('./logger.js');
 
-const logger2 = require('./logger.js');
+//const logger2 = require('./logger.js');
 
 //console.log(logger);
 
 //logger.log('Hello');
 //logger2.log('second object of logger');
 
-log('Function exported only')
+//log('Function exported only')
 
 
-const path = require('path');
+//const path = require('path');
 
-var pathObj = path.parse(__filename);
+//var pathObj = path.parse(__filename);
 
-console.log(pathObj);
+//console.log(pathObj);
 
 const os = require('os');
 
@@ -41,12 +41,10 @@ console.log (`Free Memory printed Dynamically: ${freeMemory}`);
 
 
 const EventEmitter = require('events');
-const emitter = new EventEmitter();
+//const emitter = new EventEmitter();
 
 //Listener is a function which is called when that event is raised we have to register it
 //Register an event
-
-
 
 /*
 emitter.on('messageLogged', function(arg){
@@ -57,14 +55,7 @@ emitter.on('messageLogged', function(arg){
 
 //OR
 
-emitter.on('messageLogged', (arg) => {
-    console.log('Listener called', arg);
-});
 
-
-emitter.on('messageLogged', function(arg){
-    console.log('Listener called', arg);
-});
 
 
 
@@ -72,10 +63,17 @@ emitter.on('messageLogged', function(arg){
 //emitter.emit('messageLogged');
 
 //passing arguements in case of generating event
-emitter.emit('messageLogged', { id: 1, url: 'http://'});
+//emitter.emit('messageLogged', { id: 1, url: 'http://'});
 
+const Logger = require('./logger');
+const logger = new Logger();
 
+logger.on('messageLogged', function(arg){
+    console.log('Listener called', arg);
+});
 
+logger.log('message');
+//Logger('message');
 
 
 
