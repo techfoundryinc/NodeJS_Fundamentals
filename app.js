@@ -40,6 +40,23 @@ console.log (`Total Memory printed Dynamically: ${totalMemory}`);
 console.log (`Free Memory printed Dynamically: ${freeMemory}`);
 
 
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+//Listener is a function which is called when that event is raised we have to register it
+//Register an event
+emitter.on('messageLogged', function(){
+    console.log('Listener called');
+});
+
+// Raise an event pass arguement event name of the event
+emitter.emit('messageLogged');
+
+
+
+
+
+
 
 
 
