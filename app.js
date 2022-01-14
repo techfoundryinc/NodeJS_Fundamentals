@@ -45,12 +45,34 @@ const emitter = new EventEmitter();
 
 //Listener is a function which is called when that event is raised we have to register it
 //Register an event
-emitter.on('messageLogged', function(){
-    console.log('Listener called');
+
+
+
+/*
+emitter.on('messageLogged', function(arg){
+    console.log('Listener called', arg);
 });
 
+*/
+
+//OR
+
+emitter.on('messageLogged', (arg) => {
+    console.log('Listener called', arg);
+});
+
+
+emitter.on('messageLogged', function(arg){
+    console.log('Listener called', arg);
+});
+
+
+
 // Raise an event pass arguement event name of the event
-emitter.emit('messageLogged');
+//emitter.emit('messageLogged');
+
+//passing arguements in case of generating event
+emitter.emit('messageLogged', { id: 1, url: 'http://'});
 
 
 
